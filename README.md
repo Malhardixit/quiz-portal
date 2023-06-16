@@ -1,2 +1,9 @@
+# General Rules for frontend
 1) Always export the components default by creating a index.js file 
 2) We can include component into UI but not UI into component
+3) Use Images less than 200KB and use only svg or webp
+
+# General Rules for raising a PR
+1) Always write a description of PR and what it is about
+2) Attach any screenshot of UI if made changes
+3) Write all the Possible Testcases for the changes made
