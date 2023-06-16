@@ -5,6 +5,8 @@
 4) Variables should be in camelCase
 5) Write variable names in such a way that it should be understandable
 6) Avoid using negative margins
+7) Imports must be in alphabetical order
+10) Libraries imports must be at the top followed by default imports and named imports
 
 # General Rules for raising a PR
 1) Always write a description of PR and what it is about
