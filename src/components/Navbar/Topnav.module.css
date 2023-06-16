@@ -1,0 +1,75 @@
+.search{
+    width: 40%;
+    height: 2.3rem;
+    background: #DEE9EC;
+    box-shadow: inset 0px 2px 4px rgba(208, 208, 208, 0.25);
+    border-radius: 15px;
+}
+.search::placeholder{
+    font-size: large;
+    padding: 5%;
+    margin: auto;
+}
+.main_div{
+    display: flex;
+    justify-content: space-evenly;
+    /* gap: 2rem; */
+    font-size: 21px;
+    margin: auto;
+}
+
+.searchBar{
+    width: 40%;
+}
+
+.text_field{
+    width: 100%;
+}
+
+.points_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_div_userName{
+    font-size: 18px;
+}
+
+
+/* MUI images styling */
+
+.coins_image{
+    width: 20px;
+    height: 20px;
+}
+
+.images{
+    font-size: 40px;
+}
+
+.top{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+hr{
+    margin: auto 0px;
+    height: 2.8rem;
+}

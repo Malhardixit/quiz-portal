@@ -1,0 +1,83 @@
+.main_div{
+    width: 100%;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.card_div_heading{
+    font-weight: 700;
+    font-family: 'Poppins';
+    font-size: 50px;
+}
+
+.card_div{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    padding: 1.5rem;
+    border-radius: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card_div_time{
+    display: flex;
+    flex: row;
+    font-size: 30px;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: white;
+    font-weight: 700;
+}
+
+.question{
+    text-align: center;
+}
+
+.time{
+    text-align: center;
+}
+
+.time_p{
+    font-size: 2rem;
+    font-weight: 40px;
+}
+
+.tag_div{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    font-size: 20px;
+    padding: 0.4rem;
+}
+
+.tags{
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    background-color: #2E4B90;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.quesions_title{
+    font-size: 2.3rem;
+    margin-bottom: 0px;
+}
+
+.questions_div_subtitle{
+    margin-top: 0.5rem;
+}
+
+.play_button_div{
+    text-align: right;
+}
+
+.play_icon{
+    position: relative;
+    top: 4rem;
+    right: 4rem;
+}
