@@ -7,6 +7,7 @@
 6) Avoid using negative margins
 7) Imports must be in alphabetical order
 10) Libraries imports must be at the top followed by default imports and named imports
+11) Use rem instead of px  
 
 # General Rules for raising a PR
 1) Always write a description of PR and what it is about
