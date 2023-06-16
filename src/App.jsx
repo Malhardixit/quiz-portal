@@ -1,7 +1,8 @@
+import Home from './components/HomePage/Home'
 
 function App() {
   return (
-    <div>App</div>
+    <Home/>
   )
 }
 
