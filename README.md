@@ -5,7 +5,6 @@
 4) Variables should be in camelCase
 5) Write variable names in such a way that it should be understandable
 6) Avoid using negative margins
-7) Avoid prop drilling and use context api or redux
 
 # General Rules for raising a PR
 1) Always write a description of PR and what it is about
