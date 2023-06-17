@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import styles from './QuizInfoCard.module.css';
 
-function Card(props) {
+function QuizInfoCard(props) {
   const {
     image, title, tags, question, time,
   } = props;
@@ -52,7 +52,7 @@ function Card(props) {
   );
 }
 
-Card.propTypes = {
+QuizInfoCard.propTypes = {
   title: PropTypes.string,
   question: PropTypes.number,
   time: PropTypes.number,
@@ -60,4 +60,4 @@ Card.propTypes = {
   image: PropTypes.string,
 };
 
-export default Card;
+export default QuizInfoCard;
