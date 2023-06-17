@@ -1,0 +1,39 @@
+.sideBarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100%;
+    background-color: #2E4B90;
+    z-index: 100;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.sideBarHeader {
+    font-size: 2rem;
+    padding:2rem;
+    color: white;
+}
+
+.sideBarContentsWrapper {
+    display: flex;
+    flex-direction: column;
+    padding:2rem;
+
+}
+
+.sideBarContents {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: white;
+}
+
+.sideBarContentsActive {
+    background-color: white;
+    color: #2E4B90;
+    padding:1.6rem;
+    width:100%;
+    border-radius: 2rem 0 0 2rem;
+}

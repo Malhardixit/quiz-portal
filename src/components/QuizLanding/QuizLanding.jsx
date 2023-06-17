@@ -3,29 +3,20 @@ import Topnav from '../Navbar/Topnav';
 import Card from '../../ui/Card/QuizInfoCard';
 import img from '../../assets/landing_back.png';
 
-const array = [1, 2, 3, 4, 5];
-
-
 function QuizLanding() {
   return (
     <>
       <Topnav
         coins={30}
-        userName="Anish P."/>
+        userName="Anish P."
+      />
       <Card
         title="Astronomy and Space quiz"
         question={15}
         time={30}
-        tags = {['Stars', 'Space', 'Earth', 'Paid']}
-        image = {img}
+        tags={['Stars', 'Space', 'Earth', 'Paid']}
+        image={img}
       />
-      {/* {
-        array.map((item, index) => {
-          return (
-           
-          );
-        })
-      } */}
     </>
   );
 }
