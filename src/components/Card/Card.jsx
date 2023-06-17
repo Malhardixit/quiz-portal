@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 function Card(props) {
   return (
@@ -37,7 +37,6 @@ function Card(props) {
                                     key={index}
                                     className={styles.tags}
                                     >
-                                        <img src={``} />
                                         {
                                             item
                                         }
@@ -50,9 +49,9 @@ function Card(props) {
 
                 <div className={styles.play_button_div}>
                     <IconButton>
-                        <PlayCircleIcon
+                        <PlayArrowIcon
                         className={styles.play_icon}
-                        style={{color:"#2E4B90",fontSize:"80px"}}
+                        style={{color:"white",fontSize:"70px"}}
                         />
                     </IconButton>
                 </div>
