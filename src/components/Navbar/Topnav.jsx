@@ -8,6 +8,7 @@ import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import PropTypes from 'prop-types';
+import coinImg from './coins_img.svg'
 
 import { useState } from 'react';
 
@@ -43,7 +44,7 @@ function Topnav(props) {
             <div className={styles.points_div_img}>
                 <IconButton
                 className={styles.images}>
-                    <CurrencyYenIcon
+                    <img src={coinImg}
                     style={{fontSize:"45px"}}
                     className={styles.coins_image}
                     />
