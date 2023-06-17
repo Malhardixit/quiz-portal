@@ -1,11 +1,10 @@
 import React, { useState, useCallback } from 'react';
 
 import classNames from 'classnames';
-import Topnav from '../Navbar/Topnav';
-import QuizLanding from '../QuizLanding/QuizLanding';
 import styles from './SideBar.module.css';
 
-function SideBar() {
+function SideBar(props) {
+  const { children } = props;
   const [activeRoute, setActiveRoute] = useState('Home');
 
   // TODO: Add in Routes Folder
@@ -43,25 +42,28 @@ function SideBar() {
   }, [setActiveRoute]);
 
   return (
-    <div className={styles.sideBarContainer}>
-      <div className={styles.sideBarHeader}>MyGOV | Quiz</div>
-      <div className={styles.sideBarContentsWrapper}>
-        {Routes.map((route) => (
-          <div
-            role="button"
-            tabIndex={0}
-            onKeyDown={() => handleRoutes(route.name)}
-            key={route}
-            onClick={() => handleRoutes(route.name)}
-            className={classNames(styles.sideBarContents, {
-              [styles.sideBarContentsActive]: route.isActive,
-            })}
-          >
-            {route.name}
-          </div>
-        ))}
+    <>
+      <div>{children}</div>
+      <div className={styles.sideBarContainer}>
+        <div className={styles.sideBarHeader}>MyGOV | Quiz</div>
+        <div className={styles.sideBarContentsWrapper}>
+          {Routes.map((route) => (
+            <div
+              role="button"
+              tabIndex={0}
+              onKeyDown={() => handleRoutes(route.name)}
+              key={route}
+              onClick={() => handleRoutes(route.name)}
+              className={classNames(styles.sideBarContents, {
+                [styles.sideBarContentsActive]: route.isActive,
+              })}
+            >
+              {route.name}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
