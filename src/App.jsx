@@ -1,9 +1,10 @@
-import Home from './components/HomePage/Home'
+import React from 'react';
+import Home from './components/HomePage/Home';
 
 function App() {
   return (
     <Home/>
-  )
+  );
 }
 
-export default App
+export default App;
