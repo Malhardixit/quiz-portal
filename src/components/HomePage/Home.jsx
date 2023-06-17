@@ -1,6 +1,8 @@
 import Topnav from '../Navbar/Topnav'
 import Card from '../Card/Card'
-import img from '.../assets/background.png'
+import img from './background.png'
+
+const array = [1,2,3,4,5]
 
 
 function Home() {
@@ -9,13 +11,21 @@ function Home() {
         <Topnav
         coins={30}
         userName='Anish P.'/>
-        <Card
-        title='Astronomy and Space quiz'
-        question={15}
-        time={30}
-        tags = {['Stars','Space','Earth','Paid']}
-        image = {img}
-        />
+        {
+          array.map((item,index) => {
+            return(
+              <Card
+              key={index}
+              title='Astronomy and Space quiz'
+              question={15}
+              time={30}
+              tags = {['Stars','Space','Earth','Paid']}
+              image = {img}
+              />
+            )
+          })
+        }
+        
     </>
   )
 }

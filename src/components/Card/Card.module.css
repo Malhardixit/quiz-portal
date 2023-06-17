@@ -80,4 +80,6 @@
     position: relative;
     top: 4rem;
     right: 4rem;
+    background-color: #2E4B90;
+    border-radius: 50%;
 }
