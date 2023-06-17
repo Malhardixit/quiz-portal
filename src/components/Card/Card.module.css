@@ -7,7 +7,13 @@
 .card_div_heading{
     font-weight: 700;
     font-family: 'Poppins';
-    font-size: 50px;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.card_div_p{
+    margin-bottom: 1.3rem;
 }
 
 .card_div{
@@ -18,7 +24,12 @@
     padding: 1.5rem;
     border-radius: 30px;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;  
+    margin-bottom: 4rem;
+}
+
+.card_div_content{
+    margin-left:2rem;
 }
 
 .card_div_time{

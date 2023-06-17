@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 
 function Card(props) {
   return (
@@ -10,11 +10,10 @@ function Card(props) {
             <div className={styles.card_div}
             style={{backgroundImage:`url(${props.image})`}}
             >
+                <div className={styles.card_div_content}>
                 <div className={styles.card_div_heading}>
-                    <p>
-                        {
-                            props.title
-                        }
+                    <p className={styles.card_div_p}>
+                        {props.title}
                     </p>
                 </div>
                 <div className={styles.card_div_time}>
@@ -49,13 +48,13 @@ function Card(props) {
 
                 <div className={styles.play_button_div}>
                     <IconButton>
-                        <PlayArrowIcon
+                        <PlayArrowRoundedIcon
                         className={styles.play_icon}
                         style={{color:"white",fontSize:"70px"}}
                         />
                     </IconButton>
                 </div>
-
+                </div>
             </div>
         </div>
     </>
