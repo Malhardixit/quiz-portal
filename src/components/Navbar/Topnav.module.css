@@ -1,15 +1,3 @@
-.search{
-    width: 40%;
-    height: 2.3rem;
-    background: #DEE9EC;
-    box-shadow: inset 0px 2px 4px rgba(208, 208, 208, 0.25);
-    border-radius: 15px;
-}
-.search::placeholder{
-    font-size: large;
-    padding: 5%;
-    margin: auto;
-}
 .main_div{
     display: flex;
     justify-content: space-evenly;
@@ -48,6 +36,10 @@
 
 .profile_div_userName{
     font-size: 1.3rem;
+}
+
+.profileContainer{
+    display: flex;
 }
 
 

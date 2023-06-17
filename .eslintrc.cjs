@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb',
+  extends: ['airbnb', 'airbnb/hooks'],
   overrides: [
     {
       env: {
@@ -17,6 +17,7 @@ module.exports = {
       },
     },
   ],
+  plugins: ['react', 'react-hooks'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -70,5 +71,7 @@ module.exports = {
     'jsx-a11y/no-autofocus': 0,
     'jsx-a11y/media-has-caption': 0,
     'import/prefer-default-export': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
 };
