@@ -29,7 +29,7 @@ module.exports = {
   'plugins': [
     'react'
   ],
-  'rules': {
+  rules: {
     'array-bracket-spacing': ['error', 'never'],
     'comma-spacing': 'error',
     'default-case': 'error',
@@ -51,7 +51,7 @@ module.exports = {
     }],
     radix: 'error',
     semi: 'error',
-  
+
     // Overridden airbnb rules
     'import/no-extraneous-dependencies': 0,
     'import/no-unresolved': 0,
@@ -70,7 +70,7 @@ module.exports = {
     'react/require-default-props': 0,
     'react/default-props-match-prop-types': 0,
     'no-underscore-dangle': 0,
-    
+
     'import/order': 0,
     'import/no-cycle': 0,
     'no-continue': 0,
