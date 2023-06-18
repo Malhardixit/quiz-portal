@@ -1,7 +1,6 @@
 import React from 'react';
 import img from '../../assets/landing_back.png';
 import QuizInfoCard from '../../ui/QuizInfoCard/QuizInfoCard';
-import QuizCreation from '../QuizCreation/QuizCreation';
 
 function QuizLanding() {
   return (

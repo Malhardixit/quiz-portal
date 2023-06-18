@@ -42,12 +42,6 @@ function QuizCreation() {
             handleInputChange={handleInputChange}
             handleAddInputField={handleAddInputField}
           />
-          <IconButton>
-            <AddCircleIcon
-              style={{ display: 'inline', fontSize: '3rem', color: 'white' }}
-              onClick={handleAddInputField}
-            />
-          </IconButton>
         </div>
         <div className={styles.imageContaier}>
           <p>Add Image</p>

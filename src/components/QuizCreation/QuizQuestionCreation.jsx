@@ -10,7 +10,6 @@ function QuizQuestionCreation({
   return (
     <div>
       <div className={styles.optionsContainer}>
-        <p>Add Options</p>
         {inputFields.map((field, index) => (
           <div className={styles.optionsContainer}>
             <input
