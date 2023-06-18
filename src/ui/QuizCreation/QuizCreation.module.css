@@ -1,6 +1,43 @@
 .creationContainer {
+    font-size: 24px;
+    padding: 4rem;
+    color: white;
+}
+.quizCreationHeader_manual{
+    font-weight: 700;
+    text-decoration: underline;
+}
+.quizCreation_main{
+    background-color: #2E4B90;
+    border-radius: 3rem;
+    width: 80%;
+    margin: auto;
+    padding: 4rem;
+    margin-top: 3rem;
+}
+.questions_input{
+    width: 80%;
+    /* height: 4rem; */
+    border-radius: 1rem;
+    font-size: 2rem;
+    resize: vertical;
+    min-height: 4rem;
+}
+.quizCreationHeader{
+    text-align: left;
     display: flex;
-    flex-direction: row;
-    border: 1px solid red;
-    z-index: 999;
+    gap: 3rem;
+}
+.optionsContainer{
+    margin-top: 2rem;
+}
+.optionsContainer_input{
+    display: flex;
+    flex-direction: column;
+    height: 3.4rem;
+    width: 50%;
+    border-radius: 1rem;
+    font-size: 2rem;
+    background-color: #f2f2f2;
+    box-shadow: inset 0 0 10px rgba(177, 177, 177, 0.5);
 }
