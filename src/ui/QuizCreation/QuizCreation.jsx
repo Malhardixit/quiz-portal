@@ -62,9 +62,16 @@ function QuizCreation() {
         </div>
         <div className={styles.imageContaier}>
           <p>Add Image</p>
-
+          <input type="file" accept="image/*" id="img" />
         </div>
-
+        <div className={styles.submitContainer}>
+          <button
+            type="submit"
+            className={styles.submitContainer_button}
+          >
+            Upload Question
+          </button>
+        </div>
       </div>
     </div>
   );
