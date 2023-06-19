@@ -1,18 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import styles from './QuizCreation.module.css';
 import QuizQuestionCreation from './QuizQuestionCreation';
+import { quizCreationApi } from '../../utils/quizCreationApi/quizCreationApi';
 
 function QuizCreation() {
-  const [inputFields, setInputFields] = useState([{ options: '' }]);
+  const [inputState, setInputState] = useState({
+    questionOptions: [{
+      optionId: 'fid',
+      optionDesc: '',
+    }],
+    questionText: '',
+    quizId: 'fid',
+    questionId: '1',
+  });
 
-  const handleAddInputField = () => {
-    setInputFields([...inputFields, { options: '' }]);
-  };
-  const handleInputChange = (index, e) => {
-    const updatedFields = [...inputFields];
-    updatedFields[index].options = e.target.value;
-    setInputFields(updatedFields);
-  };
+  const handleAddInputField = useCallback(() => {
+    setInputState(prevState => {
+      const updatedOptions = [...prevState.questionOptions,
+        { optionDesc: '', optionId: 'fid' }];
+      return { ...prevState, questionOptions: updatedOptions };
+    });
+  }, []);
+
+  const handleInputChange = useCallback((index, e) => {
+    setInputState(prevState => {
+      const updatedOptions = [...prevState.questionOptions];
+      updatedOptions[index] = { optionDesc: e.target.value, optionId: 'fid' };
+      return { ...prevState, questionOptions: updatedOptions };
+    });
+  }, []);
+
+  const handleQuestionChange = useCallback((e) => {
+    setInputState(prevState => (
+      { ...prevState, questionText: e.target.value }));
+  }, []);
+
+  const handleSubmit = useCallback(() => {
+    quizCreationApi('fid2', inputState);
+  }, [inputState]);
 
   return (
     <div className={styles.creationContainer}>
@@ -31,12 +56,14 @@ function QuizCreation() {
             type="text"
             required
             className={styles.questions_input}
+            onChange={(e) => handleQuestionChange(e)}
+            value={inputState.questionText}
           />
         </div>
         <div className={styles.optionsContainer}>
           <p>Add Options</p>
           <QuizQuestionCreation
-            inputFields={inputFields}
+            inputFields={inputState.questionOptions}
             handleInputChange={handleInputChange}
             handleAddInputField={handleAddInputField}
           />
@@ -46,7 +73,11 @@ function QuizCreation() {
           <input type="file" accept="image/*" id="img" />
         </div>
         <div className={styles.submitContainer}>
-          <button type="submit" className={styles.submitContainer_button}>
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className={styles.submitContainer_button}
+          >
             Upload Question
           </button>
         </div>

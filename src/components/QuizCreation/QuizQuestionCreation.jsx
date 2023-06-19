@@ -11,10 +11,9 @@ function QuizQuestionCreation({
     <div>
       <div className={styles.optionsContainer}>
         {inputFields.map((field, index) => (
-          <div className={styles.optionsContainer}>
+          <div key={index} className={styles.optionsContainer}>
             <input
               className={styles.optionsContainer_input}
-              key={field.options}
               value={field.options}
               onChange={(e) => handleInputChange(index, e)}
             />
