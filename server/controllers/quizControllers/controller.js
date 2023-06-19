@@ -88,5 +88,6 @@ async function getQuiz(req,res){
 }
 module.exports = {
     createBlankQuiz,
-    addQuestion
+    addQuestion,
+    getQuiz
 }
