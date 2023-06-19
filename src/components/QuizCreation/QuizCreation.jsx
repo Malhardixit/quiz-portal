@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import IconButton from '@mui/material/IconButton';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import styles from './QuizCreation.module.css';
 import QuizQuestionCreation from './QuizQuestionCreation';
 
