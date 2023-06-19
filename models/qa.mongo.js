@@ -4,10 +4,6 @@ const qaSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    setId:{
-        type:String,
-        required:true
-    },
     questionId:{
         type:String,
         required:true
@@ -30,7 +26,8 @@ const qaSchema = new mongoose.Schema({
                 type:Number,
                 default:0
             } // 0 for image, 1 for video
-        }]
+        }],
+        default:[]
     },
     questionOptions:{
         type:[{

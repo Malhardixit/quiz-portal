@@ -38,7 +38,15 @@ const qSchema = new mongoose.Schema({
                 type:Number,
                 default:0
             }
-        }]
+        }],
+        default:[]
+    },
+    leaderBoard:{
+        type:[{
+            uid:String,
+            score:String
+        }],
+        default:[]
     }
 })
 
