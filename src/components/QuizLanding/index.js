@@ -1,1 +1,1 @@
-export {default} from './QuizLanding';
+export { default } from './QuizLanding';
