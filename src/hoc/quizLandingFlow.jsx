@@ -6,12 +6,13 @@ function quizLandingFlow(WrappedComponent) {
   return function (props) {
     return (
       <div>
-        <SideBar>
+        <div style={{ display: 'flex' }}>
+          <SideBar />
           <Topnav
             userName="Anish Parkhi"
             coins={100}
           />
-        </SideBar>
+        </div>
         <WrappedComponent {...props} />
       </div>
     );
