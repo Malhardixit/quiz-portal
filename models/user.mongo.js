@@ -20,5 +20,6 @@ const usrSchema = new mongoose.Schema({
 })
 
 module.exports = {
-    usrSchema:usrSchema
+    usrSchema:usrSchema,
+    usrModel:mongoose.model('usrModel',usrSchema)
 }
