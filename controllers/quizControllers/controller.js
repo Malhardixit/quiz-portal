@@ -63,6 +63,29 @@ async function addQuestion(req,res){
         })
     }
 }
+async function getQuiz(req,res){
+    try{
+        const quiz = await quizModel.findOne({
+            quizId:req.body.quizId
+        })
+        if(quiz){
+            res.status(200).send({
+                Message:"Quiz Response",
+                quiz:quiz
+            })
+        }
+        else{
+            res.status(200).send({
+                Message:'Quiz not available'
+            })
+        }
+    }catch(e){
+        console.log(e)
+        res.status(500).send({
+            Message:'Internal Server Error'
+        })
+    }
+}
 module.exports = {
     createBlankQuiz,
     addQuestion
