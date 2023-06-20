@@ -47,6 +47,7 @@
     font-size: 2rem;
     background-color: var(--offWhite);
     box-shadow: inset 0 0 10px rgba(177, 177, 177, 0.5);
+    margin-bottom: 1.8rem;
 }
 .submitContainer_button{
     padding: 1.3rem;
@@ -59,4 +60,17 @@
 .enterQuestionsHeader{
     margin: 0.8rem 0.6rem;
     display: block;
+}
+
+.optionsContainerInnerDiv{
+    display: flex;
+}
+
+.optionsContainerIndex{
+    margin-right: 2rem;
+    flex-basis: 2.7rem;
+}
+
+.optionsContainerWrapper{
+    display: flex;
 }

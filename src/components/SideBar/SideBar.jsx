@@ -51,9 +51,12 @@ function SideBar(props) {
 
   return (
     <>
-      <IconButton onClick={handleOpenSideBar}>
-        <MenuIcon style={{ fontSize: '3rem' }} />
-      </IconButton>
+      { !openSideBar
+      && (
+        <IconButton onClick={handleOpenSideBar}>
+          <MenuIcon style={{ fontSize: '3rem' }} />
+        </IconButton>
+      ) }
 
       {openSideBar && (
         <div className={styles.sideBarContainer}>

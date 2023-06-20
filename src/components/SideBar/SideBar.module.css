@@ -4,7 +4,7 @@
 }
 
 .sideBarContainer {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     min-width: 23rem;
@@ -44,8 +44,3 @@
     display: flex;
 }
 
-/* Adjust z-index of your components */
-.yourComponent {
-    position: relative;
-    z-index: 1; /* Ensure components are below the sidebar */
-}
