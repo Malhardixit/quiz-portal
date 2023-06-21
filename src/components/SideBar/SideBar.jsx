@@ -6,7 +6,7 @@ import styles from './SideBar.module.css';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-function SideBar(props) {
+function SideBar() {
   const [activeRoute, setActiveRoute] = useState('Home');
 
   const [openSideBar, setOpenSideBar] = useState(true);
@@ -50,42 +50,24 @@ function SideBar(props) {
   };
 
   return (
-    <>
-      { !openSideBar
-      && (
-        <IconButton onClick={handleOpenSideBar}>
-          <MenuIcon style={{ fontSize: '3rem' }} />
-        </IconButton>
-      ) }
-
-      {openSideBar && (
-        <div className={styles.sideBarContainer}>
-          <div className={styles.sideBarContainerCloseWrapper}>
-            <div className={styles.sideBarHeader}>MyGOV | Quiz</div>
-            <IconButton onClick={handleOpenSideBar}>
-              <CloseIcon style={{ fontSize: '3rem', color: 'white' }} />
-            </IconButton>
+    <div className={styles.sideBarContainer}>
+      <div className={styles.sideBarContentsWrapper}>
+        {Routes.map((route) => (
+          <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={() => handleRoutes(route.name)}
+            key={route}
+            onClick={() => handleRoutes(route.name)}
+            className={`${classNames(styles.sideBarContents, {
+              [styles.sideBarContentsActive]: route.isActive,
+            })}`}
+          >
+            {route.name}
           </div>
-          <div className={styles.sideBarContentsWrapper}>
-            {Routes.map((route) => (
-              <div
-                role="button"
-                tabIndex={0}
-                onKeyDown={() => handleRoutes(route.name)}
-                key={route}
-                onClick={() => handleRoutes(route.name)}
-                className={`${classNames(styles.sideBarContents, {
-                  [styles.sideBarContentsActive]: route.isActive,
-                })} ${styles.sideBar_div} `}
-              >
-                {route.name}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-    </>
+        ))}
+      </div>
+    </div>
   );
 }
 

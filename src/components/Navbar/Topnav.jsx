@@ -11,7 +11,6 @@ import coinImg from '../../assets/coins_img.svg';
 
 function Topnav(props) {
   const [search, setSearch] = useState(' ');
-
   const { coins, userName } = props;
 
   return (

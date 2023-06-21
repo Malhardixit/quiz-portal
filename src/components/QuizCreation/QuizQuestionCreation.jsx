@@ -22,7 +22,6 @@ function QuizQuestionCreation({
                 value={field.options}
                 onChange={(e) => handleInputChange(index, e)}
               />
-
             </div>
           ))}
         </div>
