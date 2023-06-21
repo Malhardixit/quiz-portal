@@ -9,6 +9,7 @@ function QuizQuestionCreation({
 }) {
   return (
     <div>
+      <p>Add Options</p>
       <div className={styles.optionsContainer}>
         <div>
           {inputFields.map((field, index) => (
@@ -25,12 +26,11 @@ function QuizQuestionCreation({
             </div>
           ))}
         </div>
-        <IconButton>
-          <AddCircleIcon
-            style={{ display: 'inline', fontSize: '3rem', color: 'white' }}
-            onClick={handleAddInputField}
-          />
-        </IconButton>
+        <AddCircleIcon
+          className={styles.optionsContainerButton}
+          style={{ fontSize: '3rem', color: 'white' }}
+          onClick={handleAddInputField}
+        />
       </div>
     </div>
   );

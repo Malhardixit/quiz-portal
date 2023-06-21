@@ -36,7 +36,6 @@ function QuizCreation() {
           />
         </div>
         <div className={styles.optionsContainer}>
-          <p>Add Options</p>
           <QuizQuestionCreation
             inputFields={inputFields}
             handleInputChange={handleInputChange}

@@ -7,7 +7,7 @@
 
 .creationContainer {
     font-size: 2.4rem;
-    padding: 4rem;
+    padding: 6rem;
     color: var(--white);
 }
 .quizCreationHeader_manual{
@@ -37,6 +37,13 @@
 }
 .optionsContainer{
     margin-top: 2rem;
+    display: flex;
+}
+.optionsContainerButton{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    margin-bottom: 2rem;
 }
 .optionsContainer_input{
     display: flex;
@@ -48,6 +55,7 @@
     background-color: var(--offWhite);
     box-shadow: inset 0 0 10px rgba(177, 177, 177, 0.5);
     margin-bottom: 1.8rem;
+    flex-basis: 70%;
 }
 .submitContainer_button{
     padding: 1.3rem;
