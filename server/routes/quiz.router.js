@@ -4,4 +4,5 @@ const {createBlankQuiz, addQuestion, getQuiz} = require('../controllers/quizCont
 Router.post('/createBlankQuiz',createBlankQuiz)
 Router.post('/addQuestion',addQuestion)
 Router.get('/getQuiz',getQuiz)
+Router.post('/add3DQuestion')
 module.exports = Router
