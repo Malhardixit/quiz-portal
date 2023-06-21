@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styles from './QuizRegistration.module.css';
 import { userRegistrationApi } from
   '../../utils/userRegistrationApi/userRegistrationApi';
@@ -9,24 +9,45 @@ function QuizRegistration() {
     uid: '',
   });
 
-  const handleChange = (e) => {
-    setInputState({
-      ...inputState,
-      [e.target.name]: e.target.value,
-    });
-  };
+  console.log(inputState);
+
+  const handleQuizIdChange = useCallback((e) => {
+    setInputState({ ...inputState, quizId: e.target.value });
+  }, [inputState]);
+
+  const handleUIDChange = useCallback((e) => {
+    setInputState({ ...inputState, uid: e.target.value });
+  }, [inputState]);
 
   const handleClick = () => {
-    userRegistrationApi(inputState.quizId, inputState.uid);
+    const { quizId, uid } = inputState;
+    userRegistrationApi(quizId, uid);
   };
+
   return (
     <div>
       <div className={styles.userRegistrationContainer}>
         <label>Enter the quiz id</label>
-        <input name="quizId" onChange={handleChange} type="text" />
+        <input
+          name="quizId"
+          onChange={(e) => handleQuizIdChange(e)}
+          value={inputState.quizId}
+          type="text"
+        />
         <label>Enter the user id</label>
-        <input name="uid" onChange={handleChange} type="text" />
-        <button onClick={handleClick} type="submit">Submit</button>
+        <input
+          name="uid"
+          onChange={(e) => handleUIDChange(e)}
+          value={inputState.uid}
+          type="text"
+        />
+        <button
+          onClick={handleClick}
+          type="submit"
+        >
+          Submit
+
+        </button>
       </div>
     </div>
   );
