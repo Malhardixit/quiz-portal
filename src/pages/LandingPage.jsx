@@ -6,14 +6,14 @@ import SideBar from '../components/SideBar/SideBar';
 
 function LandingPage() {
   return (
-    <div style={{ display: 'flex' }}>
-      <div>
-
-        <quizLandingFlow />
-      </div>
-      <div style={{ flex: '80%' }}>
-        <QuizLanding />
-        <QuizCreation />
+    <div>
+      <quizLandingFlow />
+      <div style={{ display: 'flex', flexBasis: '5%' }}>
+        <SideBar />
+        <div style={{ marginLeft: '20rem', flexBasis: '95%', margin: 'auto' }}>
+          <QuizLanding />
+          <QuizCreation />
+        </div>
       </div>
     </div>
   );

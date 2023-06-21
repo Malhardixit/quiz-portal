@@ -5,31 +5,36 @@
 
 .sideBarContainer {
     position: sticky;
+    width: 29rem;
     top: 0;
     left: 0;
     min-width: 23rem;
     height: 100%;
     background-color: var(--blue);
     z-index: 999; /* Ensure sidebar is above other elements */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .sideBarHeader {
     font-size: 2rem;
-    padding: 2rem;
+    /* padding: 2rem; */
     color: var(--white);
 }
 
 .sideBarContentsWrapper {
-    display: flex;
-    flex-direction: column;
     padding: 2rem;
+    flex-grow: 1;
 }
 
 .sideBarContents {
     margin-top: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     cursor: pointer;
     color: var(--white);
+    padding: 1rem;
 }
 
 .sideBarContentsActive {

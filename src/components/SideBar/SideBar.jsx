@@ -1,15 +1,9 @@
 import React, { useState, useCallback } from 'react';
-
-import MenuIcon from '@mui/icons-material/Menu';
 import classNames from 'classnames';
 import styles from './SideBar.module.css';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 
 function SideBar() {
   const [activeRoute, setActiveRoute] = useState('Home');
-
-  const [openSideBar, setOpenSideBar] = useState(true);
 
   // TODO: Add in Routes Folder
   // TODO: Add Routing
@@ -45,27 +39,25 @@ function SideBar() {
     setActiveRoute(route);
   }, [setActiveRoute]);
 
-  const handleOpenSideBar = () => {
-    setOpenSideBar(!openSideBar);
-  };
-
   return (
-    <div className={styles.sideBarContainer}>
-      <div className={styles.sideBarContentsWrapper}>
-        {Routes.map((route) => (
-          <div
-            role="button"
-            tabIndex={0}
-            onKeyDown={() => handleRoutes(route.name)}
-            key={route}
-            onClick={() => handleRoutes(route.name)}
-            className={`${classNames(styles.sideBarContents, {
-              [styles.sideBarContentsActive]: route.isActive,
-            })}`}
-          >
-            {route.name}
-          </div>
-        ))}
+    <div style={{ }}>
+      <div className={styles.sideBarContainer}>
+        <div className={styles.sideBarContentsWrapper}>
+          {Routes.map((route) => (
+            <div
+              role="button"
+              tabIndex={0}
+              onKeyDown={() => handleRoutes(route.name)}
+              key={route}
+              onClick={() => handleRoutes(route.name)}
+              className={`${classNames(styles.sideBarContents, {
+                [styles.sideBarContentsActive]: route.isActive,
+              })}`}
+            >
+              {route.name}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
