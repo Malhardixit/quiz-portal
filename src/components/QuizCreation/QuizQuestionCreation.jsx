@@ -11,26 +11,21 @@ function QuizQuestionCreation({
     <div>
       <p>Add Options</p>
       <div className={styles.optionsContainer}>
-        <div>
-          {inputFields.map((field, index) => (
-            <div className={styles.optionsContainerInnerDiv}>
-              <div className={styles.optionsContainerIndex}>
-                {`${index + 1}.`}
-              </div>
-              <input
-                className={styles.optionsContainer_input}
-                key={field.options}
-                value={field.options}
-                onChange={(e) => handleInputChange(index, e)}
-              />
-            </div>
-          ))}
-        </div>
-        <AddCircleIcon
-          className={styles.optionsContainerButton}
-          style={{ fontSize: '3rem', color: 'white' }}
-          onClick={handleAddInputField}
-        />
+        {inputFields.map((field, index) => (
+          <div key={index} className={styles.optionsContainer}>
+            <input
+              className={styles.optionsContainer_input}
+              value={field.options}
+              onChange={(e) => handleInputChange(index, e)}
+            />
+          </div>
+        ))}
+        <IconButton>
+          <AddCircleIcon
+            style={{ display: 'inline', fontSize: '3rem', color: 'white' }}
+            onClick={handleAddInputField}
+          />
+        </IconButton>
       </div>
     </div>
   );

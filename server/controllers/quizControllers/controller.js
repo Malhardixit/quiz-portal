@@ -66,7 +66,7 @@ async function addQuestion(req,res){
 async function getQuiz(req,res){
     try{
         const quiz = await quizModel.findOne({
-            quizId:req.body.quizId
+            quizId:req.query.quizId
         })
         if(quiz){
             res.status(200).send({
@@ -88,5 +88,6 @@ async function getQuiz(req,res){
 }
 module.exports = {
     createBlankQuiz,
-    addQuestion
+    addQuestion,
+    getQuiz
 }
