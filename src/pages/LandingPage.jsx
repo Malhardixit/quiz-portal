@@ -1,13 +1,15 @@
 import React from 'react';
-import QuizLanding from '../components/QuizLanding/QuizLanding';
-import QuizCreation from '../components/QuizCreation/QuizCreation';
+// import QuizCreationSelection from '../components/QuizCreation/index';
+// import QuizLanding from '../components/QuizLanding/QuizLanding';
+import QuizQuestions from '../components/QuizQuestions/QuizQuestions';
 import quizLandingFlow from '../hoc/quizLandingFLow';
 
 function LandingPage() {
   return (
     <div style={{ marginLeft: '7rem' }}>
-      <QuizLanding />
-      <QuizCreation />
+      {/* <QuizLanding /> */}
+      {/* <QuizCreationSelection /> */}
+      <QuizQuestions />
     </div>
   );
 }

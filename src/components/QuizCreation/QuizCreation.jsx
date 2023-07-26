@@ -1,29 +1,33 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
+import { quizCreationApi } from '../../utils/quizCreationApi/quizCreationApi';
 import styles from './QuizCreation.module.css';
 import QuizQuestionCreation from './QuizQuestionCreation';
-import { quizCreationApi } from '../../utils/quizCreationApi/quizCreationApi';
 
 function QuizCreation() {
   const [inputState, setInputState] = useState({
-    questionOptions: [{
-      optionId: 'fid',
-      optionDesc: '',
-    }],
+    questionOptions: [
+      {
+        optionId: 'fid',
+        optionDesc: '',
+      },
+    ],
     questionText: '',
     quizId: 'fid',
     questionId: '1',
   });
 
   const handleAddInputField = useCallback(() => {
-    setInputState(prevState => {
-      const updatedOptions = [...prevState.questionOptions,
-        { optionDesc: '', optionId: 'fid' }];
+    setInputState((prevState) => {
+      const updatedOptions = [
+        ...prevState.questionOptions,
+        { optionDesc: '', optionId: 'fid' },
+      ];
       return { ...prevState, questionOptions: updatedOptions };
     });
   }, []);
 
   const handleInputChange = useCallback((index, e) => {
-    setInputState(prevState => {
+    setInputState((prevState) => {
       const updatedOptions = [...prevState.questionOptions];
       updatedOptions[index] = { optionDesc: e.target.value, optionId: 'fid' };
       return { ...prevState, questionOptions: updatedOptions };
@@ -31,8 +35,10 @@ function QuizCreation() {
   }, []);
 
   const handleQuestionChange = useCallback((e) => {
-    setInputState(prevState => (
-      { ...prevState, questionText: e.target.value }));
+    setInputState((prevState) => ({
+      ...prevState,
+      questionText: e.target.value,
+    }));
   }, []);
 
   const handleSubmit = useCallback(() => {
@@ -41,14 +47,6 @@ function QuizCreation() {
 
   return (
     <div className={styles.creationContainer}>
-      <div className={styles.quizCreationHeader}>
-        <span className={styles.quizCreationHeader_manual}>
-          Manual Quiz creation
-        </span>
-        <span className={styles.quizCreationHeader_AI}>
-          AI generated quiz creation
-        </span>
-      </div>
       <div className={styles.quizCreation_main}>
         <div className={styles.enterQuestion}>
           <span className={styles.enterQuestionsHeader}>Enter Question</span>
