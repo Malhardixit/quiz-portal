@@ -4,13 +4,20 @@ import React, { useState } from 'react';
 import Styles from './QuizQuestions.module.css';
 
 function QuizQuestions() {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const handleSelectedOption = (option) => {
-    if (selectedOption === option) {
-      setSelectedOption(null);
-    } else {
-      setSelectedOption(option);
-    }
+  const questions = [1, 2, 3, 4, 5];
+  const [selectedOptions, setSelectedOptions] = useState(
+    Array(questions.length).fill(null),
+  );
+  const handleSelectedOption = (questionIndex, optionId) => {
+    setSelectedOptions((prevSelectedOptions) => {
+      const updatedSelectedOptions = [...prevSelectedOptions];
+      if (updatedSelectedOptions[questionIndex] === optionId) {
+        updatedSelectedOptions[questionIndex] = null;
+      } else {
+        updatedSelectedOptions[questionIndex] = optionId;
+      }
+      return updatedSelectedOptions;
+    });
   };
   const quizTitle = 'Astronomy and space Quiz';
   const options = [
@@ -31,7 +38,6 @@ function QuizQuestions() {
       option: 'Aryabhatta',
     },
   ];
-
   const getAlphabetLetter = (id) => String.fromCharCode(65 + id);
   return (
     <div>
@@ -56,40 +62,46 @@ function QuizQuestions() {
         </div>
 
         {/* Quiz Questions Body */}
-        <div className={Styles.QuizQuestionsBody}>
-          <div className={Styles.QuizQuestionsBodyInnerDiv}>
-            <div className={Styles.QuizQuestionsBodyInnerDivTitle}>
-              <span className={Styles.QuizQuestionsNumber}>1</span>
-              <span className={Styles.QuizOptionsTitle}>
-                What is the name of the first satellite sent into space ?
-              </span>
+        {questions.map((questionNumber) => (
+          <div key={questionNumber} className={Styles.QuizQuestionsBody}>
+            <div className={Styles.QuizQuestionsBodyInnerDiv}>
+              <div className={Styles.QuizQuestionsBodyInnerDivTitle}>
+                <span className={Styles.QuizQuestionsNumber}>
+                  {questionNumber}
+                </span>
+                <span className={Styles.QuizOptionsTitle}>
+                  What is the name of the first satellite sent into space ?
+                </span>
 
-              {/* 3D view of the quiz */}
+                {/* 3D view of the quiz */}
 
-              <div className={Styles.QuizQuestion3DView}>3D View</div>
+                <div className={Styles.QuizQuestion3DView}>3D View</div>
 
-              <div className={Styles.QuizOptionsWrapper}>
-                {options.map((item) => (
-                  <button
-                    onClick={() => handleSelectedOption(item.id)}
-                    type="button"
-                    // className={Styles.QuizOptions}
-                    className={
-                      selectedOption === item.id
-                        ? Styles.QuizOptionsSelected
-                        : Styles.QuizOptions
-                    }
-                  >
-                    <span>{getAlphabetLetter(item.id - 1)}</span>
-                    <span className={Styles.QuizOptionsList}>
-                      {item.option}
-                    </span>
-                  </button>
-                ))}
+                <div className={Styles.QuizOptionsWrapper}>
+                  {options.map((item) => (
+                    <button
+                      onClick={() =>
+                        // eslint-disable-next-line implicit-arrow-linebreak
+                        handleSelectedOption(questionNumber, item.id)}
+                      type="button"
+                      // className={Styles.QuizOptions}
+                      className={
+                        selectedOptions[questionNumber] === item.id
+                          ? Styles.QuizOptionsSelected
+                          : Styles.QuizOptions
+                      }
+                    >
+                      <span>{getAlphabetLetter(item.id - 1)}</span>
+                      <span className={Styles.QuizOptionsList}>
+                        {item.option}
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

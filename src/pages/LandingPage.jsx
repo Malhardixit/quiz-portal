@@ -3,6 +3,7 @@ import React from 'react';
 // import QuizLanding from '../components/QuizLanding/QuizLanding';
 import QuizQuestions from '../components/QuizQuestions/QuizQuestions';
 import quizLandingFlow from '../hoc/quizLandingFLow';
+// import Modal from '../common/Modal/Modal';
 
 function LandingPage() {
   return (
@@ -10,6 +11,7 @@ function LandingPage() {
       {/* <QuizLanding /> */}
       {/* <QuizCreationSelection /> */}
       <QuizQuestions />
+      {/* <Modal /> */}
     </div>
   );
 }
