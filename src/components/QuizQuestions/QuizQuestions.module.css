@@ -45,8 +45,7 @@
 }
 
 .QuizQuestionsBody {
-  width: 70%;
-  border: 2px solid var(--black);
+  width: 70%; 
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
@@ -74,7 +73,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 35%;
+  width: 45%;
   margin: auto;
   margin-top: 2rem;
   gap: 2rem;

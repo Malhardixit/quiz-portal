@@ -1,10 +1,11 @@
-import React, { useState, useCallback } from 'react';
 import classNames from 'classnames';
+import React, { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './SideBar.module.css';
 
 function SideBar() {
   const [activeRoute, setActiveRoute] = useState('Home');
-
+  const navigate = useNavigate();
   // TODO: Add in Routes Folder
   // TODO: Add Routing
   const Routes = [
@@ -35,30 +36,30 @@ function SideBar() {
     },
   ].filter((route) => route.isEnabled);
 
-  const handleRoutes = useCallback((route) => {
-    setActiveRoute(route);
-  }, [setActiveRoute]);
+  const handleRoutes = useCallback(
+    (route) => {
+      setActiveRoute(route);
+      navigate('/');
+    },
+    [setActiveRoute, navigate],
+  );
 
   return (
-    <div style={{ }}>
-      <div className={styles.sideBarContainer}>
-        <div className={styles.sideBarContentsWrapper}>
-          {Routes.map((route) => (
-            <div
-              role="button"
-              tabIndex={0}
-              onKeyDown={() => handleRoutes(route.name)}
-              key={route}
-              onClick={() => handleRoutes(route.name)}
-              className={`${classNames(styles.sideBarContents, {
-                [styles.sideBarContentsActive]: route.isActive,
-              })}`}
-            >
-              {route.name}
-            </div>
-          ))}
+    <div className={styles.sideBarContainer}>
+      {Routes.map((route) => (
+        <div
+          role="button"
+          tabIndex={0}
+          onKeyDown={() => handleRoutes(route.name)}
+          key={route}
+          onClick={() => handleRoutes(route.name)}
+          className={`${classNames(styles.sideBarContents, {
+            [styles.sideBarContentsActive]: route.isActive,
+          })}`}
+        >
+          {route.name}
         </div>
-      </div>
+      ))}
     </div>
   );
 }

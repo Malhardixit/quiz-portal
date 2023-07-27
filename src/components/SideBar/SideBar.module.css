@@ -1,51 +1,45 @@
 :root {
-    --blue: #2E4B90;
-    --white: #FFFFFF;
+  --blue: #2e4b90;
+  --white: #ffffff;
 }
 
 .sideBarContainer {
-    position: sticky;
-    width: 29rem;
-    top: 0;
-    left: 0;
-    min-width: 23rem;
-    height: 100%;
-    background-color: var(--blue);
-    z-index: 999; /* Ensure sidebar is above other elements */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    overflow-y: auto;
+  position: sticky;
+  width: 29rem  ;
+  top: 0;
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .sideBarHeader {
-    font-size: 2rem;
-    /* padding: 2rem; */
-    color: var(--white);
+  font-size: 2rem;
+  /* padding: 2rem; */
+  color: var(--white);
 }
 
 .sideBarContentsWrapper {
-    padding: 2rem;
-    flex-grow: 1;
+  padding: 2rem;
+  flex-grow: 1;
 }
 
 .sideBarContents {
-    margin-top: 2rem;
-    font-size: 1.6rem;
-    cursor: pointer;
-    color: var(--white);
-    padding: 1rem;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--white);
+  padding: 1rem;
 }
 
 .sideBarContentsActive {
-    background-color: var(--white);
-    color: var(--blue);
-    padding: 1.6rem;
-    width: 100%;
-    border-radius: 2rem 0 0 2rem;
+  background-color: var(--white);
+  color: var(--blue);
+  padding: 1.6rem;
+  width: 100%;
+  border-radius: 2rem 0 0 2rem;
 }
 
 .sideBarContainerCloseWrapper {
-    display: flex;
+  display: flex;
 }
-

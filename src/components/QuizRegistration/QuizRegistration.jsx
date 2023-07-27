@@ -9,8 +9,6 @@ function QuizRegistration() {
     uid: '',
   });
 
-  console.log(inputState);
-
   const handleQuizIdChange = useCallback((e) => {
     setInputState({ ...inputState, quizId: e.target.value });
   }, [inputState]);

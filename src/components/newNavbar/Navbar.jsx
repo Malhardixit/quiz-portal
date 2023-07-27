@@ -38,7 +38,7 @@ function Navbar({ userName, coins }) {
         />
       </div>
       <ul className={styles.navBarItemsList}>
-        <hr />
+        <hr className={styles.navBarHr} />
         <li>
           <a style={{ display: 'flex' }} href="/coins">
             <img
@@ -51,7 +51,7 @@ function Navbar({ userName, coins }) {
             </div>
           </a>
         </li>
-        <hr />
+        <hr className={styles.navBarHr} />
         <li>
           <a href="/notifications">
             <IconButton>
@@ -59,7 +59,7 @@ function Navbar({ userName, coins }) {
             </IconButton>
           </a>
         </li>
-        <hr />
+        <hr className={styles.navBarHr} />
         <li>
           <a href="/profile">
             {userName}
