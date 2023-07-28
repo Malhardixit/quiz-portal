@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import LeaderBoard from './components/LeaderBoard/LeaderBoard';
 import QuizQuestions from './components/QuizQuestions/QuizQuestions';
 import LandingPage from './pages/LandingPage';
 
@@ -19,6 +20,11 @@ function App() {
       name: '/viewquestions',
       isEnabled: true,
       component: QuizQuestions,
+    },
+    {
+      name: '/leaderboard',
+      isEnabled: true,
+      component: LeaderBoard,
     },
   ].filter((route) => route.isEnabled);
 
