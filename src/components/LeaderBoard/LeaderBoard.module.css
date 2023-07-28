@@ -1,0 +1,73 @@
+.LeaderBoardWrapper {
+  padding: 2rem;
+  margin: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.LeaderBoardTopOfAll {
+  flex-basis: 50%;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  background-color: #2e4b90;
+  color: white;
+}
+.LeaderBoardOf24Hrs {
+  flex-basis: 50%;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background-color: #2e4b90;
+  color: white;
+}
+.LeaderBoardTitle {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+.LeaderBoardInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  background-color: #002B92;
+}
+.LeaderBoardTable {
+  font-size: 1.8rem;
+}
+.LeaderBoardUsers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  background-color: #2e4b90;
+}
+.LeaderBoardDarkbg{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  background-color: #002B92;
+}
+.LeaderBoardHeader{
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 2rem;
+}
+.LeaderBoardHeaderWrapper{
+  padding: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0px;
+}
