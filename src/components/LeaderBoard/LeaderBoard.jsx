@@ -48,16 +48,11 @@ function LeaderBoard() {
       <Navbar userName="Anish P" coins={300} />
       <div style={{ display: 'flex', minHeight: '100vh' }}>
         <SideBar />
-        <div
-          style={{
-            marginLeft: '20rem',
-            flexBasis: '95%',
-            margin: 'auto',
-            marginTop: '0px',
-          }}
-        >
+        <div className={styles.LeaderBoardContainer}>
           <div className={styles.LeaderBoardHeaderWrapper}>
-            <LeaderboardIcon sx={{ fontSize: '4rem', marginRight: '1.4rem' }} />
+            <LeaderboardIcon
+              sx={{ fontSize: '4rem', marginRight: '1.4rem', color: '#002B92' }}
+            />
             <div>Leaderboard</div>
           </div>
           <div className={styles.LeaderBoardWrapper}>

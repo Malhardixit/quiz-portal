@@ -5,7 +5,12 @@
   flex-direction: row;
   gap: 2rem;
 }
-
+.LeaderBoardContainer{
+  margin-left: 20rem;
+  flex-basis: 95%;
+  margin: auto;
+  margin-top: 0px;
+}
 .LeaderBoardTopOfAll {
   flex-basis: 50%;
   border-radius: 2rem;
@@ -49,7 +54,7 @@
   background-color: #2e4b90;
 }
 .LeaderBoardDarkbg{
-    display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 1rem;
