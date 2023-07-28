@@ -1,11 +1,12 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import styles from './QuizInfoCard.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function QuizInfoCard(props) {
+  const navigate = useNavigate();
   const {
     image, title, tags, question, time,
   } = props;
@@ -43,6 +44,7 @@ function QuizInfoCard(props) {
               <PlayArrowRoundedIcon
                 className={styles.play_icon}
                 style={{ color: 'white', fontSize: '70px' }}
+                onClick={() => navigate('/viewquestions')}
               />
             </IconButton>
           </div>
