@@ -30,6 +30,10 @@
   cursor: pointer;
   color: var(--white);
   padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding-left: 2rem;
 }
 
 .sideBarContentsActive {
@@ -42,4 +46,15 @@
 
 .sideBarContainerCloseWrapper {
   display: flex;
+}
+
+.sidebarRouteName{
+  padding-top: 1rem;
+}
+.sidebarIconActive{
+  fill: black;
+  z-index: 999;
+}
+.sidebarIcon{
+  padding-top: 0.5rem;
 }

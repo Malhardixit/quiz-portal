@@ -16,6 +16,7 @@ function Navbar({ userName, coins }) {
     <nav className={styles.navBarContainer}>
       <div className={styles.navBarHeader}>
         <a href="/">MyGOV | Quiz</a>
+        <hr className={styles.navBarContainerRule} />
       </div>
       <div className={styles.navBarSearch}>
         <TextField
