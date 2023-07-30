@@ -13,6 +13,10 @@ app.use(cors());
 app.use(express.json());
 app.use('/user', userRouter);
 app.use('/quiz', quizRouter);
+app.use(express.static('/public'))
+app.use('/build/',express.static('../../node_modules/three/build'));
+app.use('/jsm/',express.static('../../node_modules/three/examples/jsm'));
+app.use('/domevents/',express.static('../../node_modules/threex.domevents'));
 const server = http.createServer(app);
 const port = process.env.PORT || 3000;
 server.listen(port, () => {
