@@ -1,15 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import IconButton from '@mui/material/IconButton';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
-import styles from './QuizInfoCard.module.css';
+import IconButton from '@mui/material/IconButton';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getQuizById } from '../../utils/quizCreationApi/getQuizById';
+import styles from './QuizInfoCard.module.css';
 
 function QuizInfoCard(props) {
   const navigate = useNavigate();
-  const {
-    image, title, tags, question, time,
-  } = props;
+  const { image, title, tags, question, time, quizId } = props;
+  const handleClick = (id) => {
+    getQuizById(id).then((res) => {
+      console.log(res, 'malhar console');
+      navigate('/viewquestions', { state: res.quiz });
+    });
+  };
   return (
     <div className={styles.main_div}>
       <div
@@ -18,9 +23,7 @@ function QuizInfoCard(props) {
       >
         <div className={styles.card_div_content}>
           <div className={styles.card_div_heading}>
-            <p className={styles.card_div_p}>
-              {title}
-            </p>
+            <p className={styles.card_div_p}>{title}</p>
           </div>
           <div className={styles.card_div_time}>
             <div className={styles.question}>
@@ -37,14 +40,15 @@ function QuizInfoCard(props) {
               <div key={index} className={styles.tags}>
                 {item}
               </div>
-            )) }
+            ))}
           </div>
           <div className={styles.play_button_div}>
             <IconButton>
               <PlayArrowRoundedIcon
                 className={styles.play_icon}
                 style={{ color: 'white', fontSize: '70px' }}
-                onClick={() => navigate('/viewquestions')}
+                onClick={() => handleClick(quizId)}
+                // onClick={() => navigate('/viewquestions')}
               />
             </IconButton>
           </div>
@@ -60,6 +64,7 @@ QuizInfoCard.propTypes = {
   time: PropTypes.number,
   tags: PropTypes.array,
   image: PropTypes.string,
+  quizId: PropTypes.string,
 };
 
 export default QuizInfoCard;

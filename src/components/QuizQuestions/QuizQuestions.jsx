@@ -1,11 +1,16 @@
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import IconButton from '@mui/material/IconButton';
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
 import Navbar from '../newNavbar/Navbar';
 import Styles from './QuizQuestions.module.css';
 
 function QuizQuestions() {
+  const { state } = useLocation();
+  // console.log(state);
+  const data = state;
+  console.log(data);
   const questions = [1, 2, 3, 4, 5];
   const [selectedOptions, setSelectedOptions] = useState(
     Array(questions.length).fill(null),
@@ -22,24 +27,6 @@ function QuizQuestions() {
     });
   };
   const quizTitle = 'Astronomy and space Quiz';
-  const options = [
-    {
-      id: 1,
-      option: 'Sputnik',
-    },
-    {
-      id: 2,
-      option: 'Ariel',
-    },
-    {
-      id: 3,
-      option: 'GSAT-10',
-    },
-    {
-      id: 4,
-      option: 'Aryabhatta',
-    },
-  ];
   const getAlphabetLetter = (id) => String.fromCharCode(65 + id);
 
   return (
@@ -69,15 +56,15 @@ function QuizQuestions() {
             </div>
 
             {/* Quiz Questions Body */}
-            {questions.map((questionNumber) => (
+            {data.questionSets.map((questionNumber) => (
               <div key={questionNumber} className={Styles.QuizQuestionsBody}>
                 <div className={Styles.QuizQuestionsBodyInnerDiv}>
                   <div className={Styles.QuizQuestionsBodyInnerDivTitle}>
                     <span className={Styles.QuizQuestionsNumber}>
-                      {questionNumber}
+                      {questionNumber.questionId}
                     </span>
                     <span className={Styles.QuizOptionsTitle}>
-                      What is the name of the first satellite sent into space ?
+                      {questionNumber.questionText}
                     </span>
 
                     {/* 3D view of the quiz */}
@@ -85,22 +72,21 @@ function QuizQuestions() {
                     <div className={Styles.QuizQuestion3DView}>3D View</div>
 
                     <div className={Styles.QuizOptionsWrapper}>
-                      {options.map((item) => (
+                      {questionNumber.questionOptions.map((item) => (
                         <button
-                          onClick={
-                            () => handleSelectedOption(questionNumber, item.id)
-                          }
+                          // eslint-disable-next-line max-len
+                          onClick={() => handleSelectedOption(questionNumber.questionId, item.optionId)}
                           type="button"
-                          // className={Styles.QuizOptions}
                           className={
-                            selectedOptions[questionNumber] === item.id
+                            selectedOptions[questionNumber.questionId]
+                            === item.optionId
                               ? Styles.QuizOptionsSelected
                               : Styles.QuizOptions
                           }
                         >
-                          <span>{getAlphabetLetter(item.id - 1)}</span>
+                          <span>{getAlphabetLetter(item.optionId - 1)}</span>
                           <span className={Styles.QuizOptionsList}>
-                            {item.option}
+                            {item.optionDesc}
                           </span>
                         </button>
                       ))}

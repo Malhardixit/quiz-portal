@@ -1,4 +1,5 @@
 import React from 'react';
+import QuizCreation from '../components/QuizCreation/QuizCreationSelection';
 import QuizLanding from '../components/QuizLanding/QuizLanding';
 import SideBar from '../components/SideBar/SideBar';
 import Navbar from '../components/newNavbar';
@@ -17,6 +18,7 @@ function LandingPage() {
           ))}
         </div>
       </div>
+      <QuizCreation />
     </>
   );
 }
