@@ -5,9 +5,9 @@ const http = require('http');
 const quizRouter = require('../routes/quiz.router');
 const userRouter = require('../routes/user.router');
 
-const mongooseUrl = `mongodb+srv://
-Riddhiman_Mongo:Hello123@cluster1.b76yf
-.mongodb.net/MyGov?retryWrites=true&w=majority`;
+const mongooseUrl = `mongodb+srv://Riddhiman_Mongo
+:Hello123@cluster1.b76yf.mongodb.net
+/MyGov?retryWrites=true&w=majority`;
 mongoose.connect(mongooseUrl);
 console.log('Connected to db');
 const app = express();
