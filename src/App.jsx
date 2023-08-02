@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import LeaderBoard from './components/LeaderBoard/LeaderBoard';
 import QuizQuestions from './components/QuizQuestions/QuizQuestions';
 import LandingPage from './pages/LandingPage';
+import QuizCreation from './components/QuizCreation/QuizCreation';
 
 function App() {
   const quizRoutes = [
@@ -25,6 +26,11 @@ function App() {
       name: '/leaderboard',
       isEnabled: true,
       component: LeaderBoard,
+    },
+    {
+      name: '/quizCreation',
+      isEnabled: true,
+      component: QuizCreation,
     },
   ].filter((route) => route.isEnabled);
 
