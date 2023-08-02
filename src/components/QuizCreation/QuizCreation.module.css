@@ -2,7 +2,7 @@
   --white: #ffffff;
   --blue: #2e4b90;
   --offWhite: #f2f2f2;
-  --green: #5184F0;
+  --upload-Btn-Color: #5184F0;
   --black: #000000;
 }
 
@@ -58,7 +58,7 @@
   padding: 2rem;
   margin-top: 3rem;
   border-radius: 10px;
-  background-color: var(--green);
+  background-color: var(--upload-Btn-Color);
   font-size: 2rem;
   cursor: pointer;
   color: white;

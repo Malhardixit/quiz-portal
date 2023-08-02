@@ -3,7 +3,7 @@ import { quizCreationApi } from '../../utils/quizCreationApi/quizCreationApi';
 import styles from './QuizCreation.module.css';
 import QuizQuestionCreation from './QuizQuestionCreation';
 
-const data = [
+const optionsData = [
   {
     category: 'Animal',
     options: [
@@ -67,11 +67,6 @@ function QuizCreation() {
   });
 
   const { category } = options;
-
-  // const [selectedCorrectAnswer, setSelectedCorrectAnswer] = useState('');
-
-  console.log(options);
-
   const handleAddInputField = useCallback(() => {
     setInputState((prevState) => {
       const updatedOptions = [
@@ -125,20 +120,18 @@ function QuizCreation() {
           />
         </div>
         <div className={styles.optionTitle}>
-          Select from below option to choose{' '}
-          <span style={{ fontWeight: 'bold' }}>3D model</span>{' '}
+          {`${'Select from below option to choose '}`}
+          <span style={{ fontWeight: 'bold' }}>3D model</span>
         </div>
         <div className={styles.radioBtnContainer}>
-          {data.map((item) => (
+          {optionsData.map((item) => (
             <div key={item.category} className={styles.radioBtnContainerLabel}>
               <input
-                onChange={(e) =>
-                  setOptions({
-                    ...options,
-                    category: e.target.value,
-                    subCategory: '',
-                  })
-                }
+                onChange={(e) => setOptions({
+                  ...options,
+                  category: e.target.value,
+                  subCategory: '',
+                })}
                 type="radio"
                 value={item.category}
                 name="catRadioBtn"
@@ -153,12 +146,12 @@ function QuizCreation() {
             <p style={{ fontSize: '2rem' }}>Select from the dropdown:</p>
             <select
               className={styles.dropDownOptions}
-              onChange={(e) =>
-                setOptions({ ...options, subCategory: e.target.value })
+              onChange={
+                (e) => setOptions({ ...options, subCategory: e.target.value })
               }
             >
               <option value="">Please select an option</option>
-              {data.map((item) => {
+              {optionsData.map((item) => {
                 if (item.category === category) {
                   return item.options.map((option) => (
                     <option key={option.name} value={option.name}>
@@ -172,28 +165,6 @@ function QuizCreation() {
           </div>
         )}
 
-        <div className={styles.correctAnswerContainer}>
-          <div className={styles.correctAnswerHead}>
-            Choose the correct option
-          </div>
-          <div className={styles.correctAnswerWrapper}>
-            {/* {correctAnswerArray.map((item) => (
-              <label className={styles.correctAnswerContainer} key={item}>
-                <input
-                  className={styles.correctAnswerInput}
-                  type="radio"
-                  name="correctAnswer"
-                  value={item}
-                  onChange={
-                    (e) =>
-                    setSelectedCorrectAnswer(parseInt(e.target.value, 10))}
-                  checked={selectedCorrectAnswer === item}
-                />
-                <span style={{ margin: 'auto' }}>{item + 1}</span>
-              </label>
-            ))} */}
-          </div>
-        </div>
         <div className={styles.submitContainer}>
           <button
             type="submit"
