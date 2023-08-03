@@ -69,13 +69,23 @@ function QuizQuestions() {
 
                     {/* 3D view of the quiz */}
 
-                    <div className={Styles.QuizQuestion3DView}>3D View</div>
+                    <div className={Styles.QuizQuestion3DView}>
+                      <iframe
+                        height="400px"
+                        width="800px"
+                        title="3D model"
+                        src="https://web-production-bdcf.up.railway.app/index2.html"
+                      />
+                    </div>
 
                     <div className={Styles.QuizOptionsWrapper}>
                       {questionNumber.questionOptions.map((item) => (
                         <button
                           // eslint-disable-next-line max-len
-                          onClick={() => handleSelectedOption(questionNumber.questionId, item.optionId)}
+                          onClick={() => handleSelectedOption(
+                            questionNumber.questionId,
+                            item.optionId,
+                          )}
                           type="button"
                           className={
                             selectedOptions[questionNumber.questionId]
