@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import IconButton from '@mui/material/IconButton';
-import React, { useState } from 'react';
+// import { PresentationControls, Stage, useGLTF } from '@react-three/drei';
+// import { Canvas } from '@react-three/fiber';
 import { useLocation } from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
 import Navbar from '../newNavbar/Navbar';
 import Styles from './QuizQuestions.module.css';
+import ThreeDQuiz from './ThreeDQuizView';
 
 function QuizQuestions() {
   const { state } = useLocation();
@@ -34,6 +37,10 @@ function QuizQuestions() {
                   <span>Minutes</span>
                 </div>
               </div>
+            </div>
+
+            <div className={Styles.QuizQuestion3DView}>
+              <ThreeDQuiz />
             </div>
 
             {/* Quiz Questions Body */}
