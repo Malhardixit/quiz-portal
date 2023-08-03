@@ -1,14 +1,22 @@
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import IconButton from '@mui/material/IconButton';
-import React, { useState } from 'react';
+// import { PresentationControls, Stage, useGLTF } from '@react-three/drei';
+// import { Canvas } from '@react-three/fiber';
+import React, { Suspense, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
 import Navbar from '../newNavbar/Navbar';
 import Styles from './QuizQuestions.module.css';
+import ThreeDQuiz from './ThreeDQuizView';
+
+// function Model(props) {
+//   const { scene } = useGLTF('src/public/model.gltf');
+//   // eslint-disable-next-line react/no-unknown-property
+//   return <primitive object={scene} scale={0.01} {...props} />;
+// }
 
 function QuizQuestions() {
   const { state } = useLocation();
-  // console.log(state);
   const data = state;
   console.log(data);
   const questions = [1, 2, 3, 4, 5];
@@ -55,6 +63,31 @@ function QuizQuestions() {
               </div>
             </div>
 
+            {/* <div>
+              <Canvas
+                dpr={[1, 2]}
+                shadows
+                camera={{ fov: 45 }}
+                style={{ position: 'absolute' }}
+              >
+                <color attach="background" args={['#101010']} />
+                <PresentationControls
+                  speed={1.5}
+                  global
+                  zoom={0.5}
+                  // polar={[-0.1, Math.PI / 4]}
+                >
+                  <Stage>
+                    <Model scale={0.01} />
+                  </Stage>
+                </PresentationControls>
+              </Canvas>
+            </div> */}
+
+            <div className={Styles.QuizQuestion3DView}>
+              <ThreeDQuiz />
+            </div>
+
             {/* Quiz Questions Body */}
             {data.questionSets.map((questionNumber) => (
               <div key={questionNumber} className={Styles.QuizQuestionsBody}>
@@ -68,16 +101,6 @@ function QuizQuestions() {
                     </span>
 
                     {/* 3D view of the quiz */}
-
-                    <div className={Styles.QuizQuestion3DView}>
-                      <iframe
-                        height="400px"
-                        width="800px"
-                        title="3D model"
-                        src="https://web-production-bdcf.up.railway.app/\
-                        index2.html"
-                      />
-                    </div>
 
                     <div className={Styles.QuizOptionsWrapper}>
                       {questionNumber.questionOptions.map((item) => (
