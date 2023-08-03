@@ -74,7 +74,8 @@ function QuizQuestions() {
                         height="400px"
                         width="800px"
                         title="3D model"
-                        src="https://web-production-bdcf.up.railway.app/index2.html"
+                        src="https://web-production-bdcf.up.railway.app/\
+                        index2.html"
                       />
                     </div>
 
