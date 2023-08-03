@@ -39,10 +39,6 @@ function QuizQuestions() {
               </div>
             </div>
 
-            <div className={Styles.QuizQuestion3DView}>
-              <ThreeDQuiz />
-            </div>
-
             {/* Quiz Questions Body */}
             {state.questionSets.map((questionNumber, index) => (
               <div
@@ -59,6 +55,7 @@ function QuizQuestions() {
                     </span>
 
                     {/* 3D view of the quiz */}
+                    <ThreeDQuiz />
 
                     <div className={Styles.QuizOptionsWrapper}>
                       {questionNumber.questionOptions.map((item, i) => (

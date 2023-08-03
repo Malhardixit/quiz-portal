@@ -43,14 +43,21 @@ function SideBar() {
       isActive: false,
       icon: img4,
     },
+    {
+      name: 'QuizCreation',
+      isEnabled: true,
+      isActive: activeRoute === 'QuizCreation',
+      navigateTo: '/quizCreation',
+      icon: img4,
+    },
   ].filter((route) => route.isEnabled);
 
   const handleRoutes = useCallback(
     (route) => {
       setActiveRoute(route);
-      navigate('/');
+      navigate(Routes.find((r) => r.name === route).navigateTo);
     },
-    [setActiveRoute, navigate],
+    [setActiveRoute, navigate, Routes],
   );
 
   return (

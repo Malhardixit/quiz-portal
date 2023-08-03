@@ -10,33 +10,6 @@ function Model(props) {
 }
 
 function ThreeDQuizView() {
-  // const { camera } = useThree();
-  // const [isDragging, setIsDragging] = useState(false);
-  // const prevMouseY = useRef(0);
-
-  // const handleMouseDown = (event) => {
-  //   setIsDragging(true);
-  //   prevMouseY.current = event.clientY;
-  // };
-
-  // const handleMouseUp = () => {
-  //   setIsDragging(false);
-  // };
-
-  // const handleMouseMove = (event) => {
-  //   if (isDragging) {
-  //     const deltaY = event.clientY - prevMouseY.current;
-  //     const newPositionX = camera.position.x - deltaY * 0.01; // Adjust the sensitivity here
-
-  //     // Limit the camera's X position to prevent it from going too far
-  //     const maxX = 5;
-  //     const minX = -5;
-  //     camera.position.x = Math.min(Math.max(newPositionX, minX), maxX);
-
-  //     prevMouseY.current = event.clientY;
-  //   }
-  // };
-
   return (
     <div
       style={{
@@ -50,10 +23,13 @@ function ThreeDQuizView() {
         dpr={[1, 2]}
         shadows
         camera={{ fov: 80 }}
-        style={{ position: 'absolute', borderRadius: '2rem' }}
+        style={{
+          position: 'absolute',
+          borderRadius: '2rem',
+          backgroundColor: 'transparent',
+        }}
       >
-        <color attach="background" args={['#101010']} />
-        
+
         <PresentationControls
           speed={1.5}
           global
