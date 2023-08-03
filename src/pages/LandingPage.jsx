@@ -6,19 +6,15 @@ import Navbar from '../components/newNavbar';
 import quizLandingFlow from '../hoc/quizLandingFLow';
 
 function LandingPage() {
-  const quizes = [1, 2, 3, 4, 5];
   return (
     <>
       <Navbar userName="Anish P" coins={300} />
       <div style={{ display: 'flex', minHeight: '100vh' }}>
         <SideBar />
         <div style={{ marginLeft: '20rem', flexBasis: '95%', margin: 'auto' }}>
-          {quizes.map((item, index) => (
-            <QuizLanding key={index} />
-          ))}
+          <QuizLanding />
         </div>
       </div>
-      <QuizCreation />
     </>
   );
 }

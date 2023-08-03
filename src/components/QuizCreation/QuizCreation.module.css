@@ -7,8 +7,11 @@
 }
 
 .creationContainer {
+  margin-left: 20rem;
+  flex-basis: 95%;
+  margin: auto;
+  margin-top: 0px;
   font-size: 2.4rem;
-  padding: 4rem;
   color: var(--white);
 }
 .quizCreationHeader_manual {
@@ -62,6 +65,18 @@
   font-size: 2rem;
   cursor: pointer;
   color: white;
+  width: 25%;
+  border: 0.1rem solid rgb(7, 7, 224);
+}
+
+.submitContainer_button_disabled {
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 10px;
+  background-color: grey;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
   width: 25%;
   border: 0.1rem solid rgb(7, 7, 224);
 }
