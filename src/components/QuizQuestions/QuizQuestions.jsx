@@ -8,27 +8,8 @@ import Styles from './QuizQuestions.module.css';
 
 function QuizQuestions() {
   const { state } = useLocation();
-  // console.log(state);
-  const data = state;
-  console.log(data);
-  const questions = [1, 2, 3, 4, 5];
-  const [selectedOptions, setSelectedOptions] = useState(
-    Array(questions.length).fill(null),
-  );
-  const handleSelectedOption = (questionIndex, optionId) => {
-    setSelectedOptions((prevSelectedOptions) => {
-      const updatedSelectedOptions = [...prevSelectedOptions];
-      if (updatedSelectedOptions[questionIndex] === optionId) {
-        updatedSelectedOptions[questionIndex] = null;
-      } else {
-        updatedSelectedOptions[questionIndex] = optionId;
-      }
-      return updatedSelectedOptions;
-    });
-  };
+  const [selectedOptions, setSelectedOptions] = useState('');
   const quizTitle = 'Astronomy and space Quiz';
-  const getAlphabetLetter = (id) => String.fromCharCode(65 + id);
-
   return (
     <div>
       <Navbar userName="Anish P" coins={300} />
@@ -56,8 +37,11 @@ function QuizQuestions() {
             </div>
 
             {/* Quiz Questions Body */}
-            {data.questionSets.map((questionNumber) => (
-              <div key={questionNumber} className={Styles.QuizQuestionsBody}>
+            {state.questionSets.map((questionNumber, index) => (
+              <div
+                key={index}
+                className={Styles.QuizQuestionsBody}
+              >
                 <div className={Styles.QuizQuestionsBodyInnerDiv}>
                   <div className={Styles.QuizQuestionsBodyInnerDivTitle}>
                     <span className={Styles.QuizQuestionsNumber}>
@@ -69,23 +53,14 @@ function QuizQuestions() {
 
                     {/* 3D view of the quiz */}
 
-                    <div className={Styles.QuizQuestion3DView}>
-                      <iframe
-                        height="400px"
-                        width="800px"
-                        title="3D model"
-                        src="https://web-production-bdcf.up.railway.app/index2.html"
-                      />
-                    </div>
-
                     <div className={Styles.QuizOptionsWrapper}>
-                      {questionNumber.questionOptions.map((item) => (
+                      {questionNumber.questionOptions.map((item, i) => (
                         <button
-                          // eslint-disable-next-line max-len
-                          onClick={() => handleSelectedOption(
-                            questionNumber.questionId,
-                            item.optionId,
-                          )}
+                          key={item.optionId}
+                          onClick={() => setSelectedOptions({
+                            ...selectedOptions,
+                            [questionNumber.questionId]: item.optionId,
+                          })}
                           type="button"
                           className={
                             selectedOptions[questionNumber.questionId]
@@ -94,7 +69,7 @@ function QuizQuestions() {
                               : Styles.QuizOptions
                           }
                         >
-                          <span>{getAlphabetLetter(item.optionId - 1)}</span>
+                          <span>{i + 1}</span>
                           <span className={Styles.QuizOptionsList}>
                             {item.optionDesc}
                           </span>

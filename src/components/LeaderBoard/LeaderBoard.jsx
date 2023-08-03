@@ -69,6 +69,7 @@ function LeaderBoard() {
                 </div>
                 {data.map((item) => (
                   <div
+                    key={item.name}
                     className={
                       item.rank % 2
                         ? styles.LeaderBoardUsers
@@ -95,6 +96,7 @@ function LeaderBoard() {
                 </div>
                 {data.map((item) => (
                   <div
+                    key={item.name}
                     className={
                       item.rank % 2
                         ? styles.LeaderBoardUsers

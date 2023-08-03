@@ -8,10 +8,11 @@ import styles from './QuizInfoCard.module.css';
 
 function QuizInfoCard(props) {
   const navigate = useNavigate();
-  const { image, title, tags, question, time, quizId } = props;
+  const {
+    image, title, tags, question, time, quizId,
+  } = props;
   const handleClick = (id) => {
     getQuizById(id).then((res) => {
-      console.log(res, 'malhar console');
       navigate('/viewquestions', { state: res.quiz });
     });
   };

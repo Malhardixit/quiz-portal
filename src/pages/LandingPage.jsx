@@ -13,8 +13,8 @@ function LandingPage() {
       <div style={{ display: 'flex', minHeight: '100vh' }}>
         <SideBar />
         <div style={{ marginLeft: '20rem', flexBasis: '95%', margin: 'auto' }}>
-          {quizes.map((item) => (
-            <QuizLanding key={item} />
+          {quizes.map((item, index) => (
+            <QuizLanding key={index} />
           ))}
         </div>
       </div>

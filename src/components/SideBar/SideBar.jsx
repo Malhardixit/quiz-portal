@@ -60,7 +60,7 @@ function SideBar() {
           role="button"
           tabIndex={0}
           onKeyDown={() => handleRoutes(route.name)}
-          key={route}
+          key={route.name}
           onClick={() => handleRoutes(route.name)}
           className={`${classNames(styles.sideBarContents, {
             [styles.sideBarContentsActive]: route.isActive,

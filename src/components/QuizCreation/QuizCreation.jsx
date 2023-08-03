@@ -52,13 +52,13 @@ function QuizCreation() {
   const [inputState, setInputState] = useState({
     questionOptions: [
       {
-        optionId: 'fid',
+        optionId: '',
         optionDesc: '',
       },
     ],
     questionText: '',
-    quizId: 'fid',
-    questionId: '1',
+    quizId: 'quizforgov',
+    questionId: '2',
   });
 
   const [options, setOptions] = useState({
@@ -71,7 +71,7 @@ function QuizCreation() {
     setInputState((prevState) => {
       const updatedOptions = [
         ...prevState.questionOptions,
-        { optionDesc: '', optionId: 'fid' },
+        { optionDesc: '', optionId: '' },
       ];
       return { ...prevState, questionOptions: updatedOptions };
     });
@@ -80,7 +80,9 @@ function QuizCreation() {
   const handleInputChange = useCallback((index, e) => {
     setInputState((prevState) => {
       const updatedOptions = [...prevState.questionOptions];
-      updatedOptions[index] = { optionDesc: e.target.value, optionId: 'fid' };
+      updatedOptions[index] = {
+        optionDesc: e.target.value, optionId: index + 1,
+      };
       return { ...prevState, questionOptions: updatedOptions };
     });
   }, []);
@@ -93,7 +95,7 @@ function QuizCreation() {
   }, []);
 
   const handleSubmit = useCallback(() => {
-    quizCreationApi('fid2', inputState);
+    quizCreationApi('quizforgov', inputState);
   }, [inputState]);
 
   return (

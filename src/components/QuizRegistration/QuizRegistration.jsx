@@ -44,7 +44,6 @@ function QuizRegistration() {
           type="submit"
         >
           Submit
-
         </button>
       </div>
     </div>

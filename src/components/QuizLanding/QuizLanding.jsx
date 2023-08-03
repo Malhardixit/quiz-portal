@@ -1,7 +1,7 @@
 import React from 'react';
 import img from '../../assets/landing_back.png';
 import QuizInfoCard from '../../ui/QuizInfoCard/QuizInfoCard';
-// api hit get all quizes
+import QuizCreation from '../QuizCreation/QuizCreation';
 
 function QuizLanding() {
   return (
@@ -11,7 +11,7 @@ function QuizLanding() {
       time={30}
       tags={['Stars', 'Space', 'Earth', 'Paid']}
       image={img}
-      quizId="fid"
+      quizId="quizforgov"
     />
   );
 }
