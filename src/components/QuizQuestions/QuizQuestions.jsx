@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import IconButton from '@mui/material/IconButton';
-// import { PresentationControls, Stage, useGLTF } from '@react-three/drei';
-// import { Canvas } from '@react-three/fiber';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
 import Navbar from '../newNavbar/Navbar';
 import Styles from './QuizQuestions.module.css';
-import ThreeDQuiz from './ThreeDQuizView';
+import SecondThreeDQuiz from './Second3D';
 
 function QuizQuestions() {
   const { state } = useLocation();
@@ -38,15 +36,8 @@ function QuizQuestions() {
                 </div>
               </div>
             </div>
-
-            <ThreeDQuiz />
-
-            {/* Quiz Questions Body */}
             {state.questionSets.map((questionNumber, index) => (
-              <div
-                key={index}
-                className={Styles.QuizQuestionsBody}
-              >
+              <div key={index} className={Styles.QuizQuestionsBody}>
                 <div className={Styles.QuizQuestionsBodyInnerDiv}>
                   <div className={Styles.QuizQuestionsBodyInnerDivTitle}>
                     <span className={Styles.QuizQuestionsNumber}>
@@ -55,21 +46,23 @@ function QuizQuestions() {
                     <span className={Styles.QuizOptionsTitle}>
                       {questionNumber.questionText}
                     </span>
-
-                    {/* 3D view of the quiz */}
-
+                    <div>
+                      <SecondThreeDQuiz />
+                    </div>
                     <div className={Styles.QuizOptionsWrapper}>
                       {questionNumber.questionOptions.map((item, i) => (
                         <button
                           key={item.optionId}
-                          onClick={() => setSelectedOptions({
-                            ...selectedOptions,
-                            [questionNumber.questionId]: item.optionId,
-                          })}
+                          onClick={() =>
+                            setSelectedOptions({
+                              ...selectedOptions,
+                              [questionNumber.questionId]: item.optionId,
+                            })
+                          }
                           type="button"
                           className={
-                            selectedOptions[questionNumber.questionId]
-                            === item.optionId
+                            selectedOptions[questionNumber.questionId] ===
+                            item.optionId
                               ? Styles.QuizOptionsSelected
                               : Styles.QuizOptions
                           }

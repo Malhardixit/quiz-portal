@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import React from 'react';
 
 function Model(props) {
-  const { scene } = useGLTF('src/public/model.gltf');
+  const { scene } = useGLTF('src/public/scene.gltf');
   // eslint-disable-next-line react/no-unknown-property
   return <primitive object={scene} scale={0.01} {...props} />;
 }
