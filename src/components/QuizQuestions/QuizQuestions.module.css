@@ -122,3 +122,15 @@
   font-size: 1.8rem;
   color: var(--blue);
 }
+.submitQuizContainer{
+  text-align: center;
+  margin: auto;
+  padding: 4rem;
+}
+.submitQuizButton{
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--blue);
+  color: white;
+  font-size: 2rem;
+}

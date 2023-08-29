@@ -6,11 +6,13 @@ import SideBar from '../SideBar/SideBar';
 import Navbar from '../newNavbar/Navbar';
 import Styles from './QuizQuestions.module.css';
 import SecondThreeDQuiz from './Second3D';
+import { useNavigate } from 'react-router-dom';
 
 function QuizQuestions() {
   const { state } = useLocation();
   const [selectedOptions, setSelectedOptions] = useState('');
   const quizTitle = 'Astronomy and space Quiz';
+  const navigate = useNavigate();
   return (
     <div>
       <Navbar userName="Anish P" coins={300} />
@@ -53,16 +55,14 @@ function QuizQuestions() {
                       {questionNumber.questionOptions.map((item, i) => (
                         <button
                           key={item.optionId}
-                          onClick={() =>
-                            setSelectedOptions({
-                              ...selectedOptions,
-                              [questionNumber.questionId]: item.optionId,
-                            })
-                          }
+                          onClick={() => setSelectedOptions({
+                            ...selectedOptions,
+                            [questionNumber.questionId]: item.optionId,
+                          })}
                           type="button"
                           className={
-                            selectedOptions[questionNumber.questionId] ===
-                            item.optionId
+                            selectedOptions[questionNumber.questionId]
+                            === item.optionId
                               ? Styles.QuizOptionsSelected
                               : Styles.QuizOptions
                           }
@@ -78,6 +78,9 @@ function QuizQuestions() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className={Styles.submitQuizContainer}>
+            <button onClick={() => navigate('/leaderboard')} className={Styles.submitQuizButton} type='submit'>Submit Quiz</button>
           </div>
         </div>
       </div>
