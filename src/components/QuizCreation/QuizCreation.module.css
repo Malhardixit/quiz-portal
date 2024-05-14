@@ -1,0 +1,159 @@
+:root {
+  --white: #ffffff;
+  --blue: #2e4b90;
+  --offWhite: #f2f2f2;
+  --upload-Btn-Color: #5184F0;
+  --black: #000000;
+}
+
+.creationContainer {
+  font-size: 2.4rem;
+  padding: 4rem;
+  color: var(--white);
+}
+.quizCreationHeader_manual {
+  color: var(--black);
+  border: none;
+  background-color: var(--white);
+  font-size: 2.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.quizCreation_main {
+  background-color: var(--blue);
+  border-radius: 3rem;
+  width: 80%;
+  margin: auto;
+  padding: 4rem;
+  margin-top: 3rem;
+}
+.questions_input {
+  width: 80%;
+  border-radius: 1rem;
+  font-size: 2rem;
+  resize: vertical;
+  min-height: 4rem;
+  padding: 1rem;
+  border: 0.2rem solid #d6dee5;
+}
+.quizCreationHeader {
+  text-align: left;
+  display: flex;
+  gap: 3rem;
+}
+.optionsContainer {
+  margin-top: 2rem;
+}
+.optionsContainer_input {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-radius: 1rem;
+  font-size: 2rem;
+  background-color: var(--offWhite);
+  border: 0.2rem solid #d6dee5;
+  padding: 1rem;
+}
+.submitContainer_button {
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 10px;
+  background-color: var(--upload-Btn-Color);
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  width: 25%;
+  border: 0.1rem solid rgb(7, 7, 224);
+}
+
+.enterQuestionsHeader {
+  margin: 0.8rem 0.6rem;
+  display: block;
+}
+
+.quizCreationHeader_AI {
+  color: var(--black);
+  border: none;
+  background-color: var(--white);
+  font-size: 2.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.activeElement {
+  text-decoration: underline;
+  font-size: 10rem;
+}
+
+.quizCreationUnderline {
+  width: 41%;
+  background-color: var(--black);
+  border: 2px solid var(--black);
+}
+
+.radioBtnContainerInput {
+  width: 2rem;
+  height: 3rem;
+  margin-top: 3rem;
+}
+
+.radioBtnContainerLabel {
+  font-size: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+.categoryText{
+  margin-top: 2.9rem;
+  font-size: 1.8rem;
+}
+
+.radioBtnContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.dropDownOptions {
+  padding: 0.6rem 0.4rem;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  width: 30%;
+  border-radius: 1rem;
+}
+.correctAnswerContainer {
+  margin-top: 2rem;
+}
+.quizCreationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--black);
+  font-size: 4rem;
+  padding: 2rem;
+  font-weight: 600;
+}
+
+.correctAnswerInput{
+  width: 3rem;
+  height: 4rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.correctAnswerWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+.radioBtnContainerWrapper{
+  border: 2px solid red;
+}
+
+.optionTitle{
+  padding-top: 2rem;
+  font-size: 2rem;
+}

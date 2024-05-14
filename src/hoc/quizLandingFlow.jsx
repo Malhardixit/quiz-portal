@@ -1,17 +1,18 @@
 import React from 'react';
-import Topnav from '../components/Navbar/Topnav';
-import SideBar from '../components/SideBar/SideBar';
+// import Topnav from '../components/Navbar/Topnav';
+import Navbar from '../components/newNavbar/Navbar';
 
 function quizLandingFlow(WrappedComponent) {
   return function (props) {
     return (
       <div>
-        <SideBar>
+        <div style={{ display: 'flex' }}>
+          {/* <SideBar />
           <Topnav
-            userName="Malhar Dixit"
+            userName="Anish Parkhi"
             coins={100}
-          />
-        </SideBar>
+          /> */}
+        </div>
         <WrappedComponent {...props} />
       </div>
     );

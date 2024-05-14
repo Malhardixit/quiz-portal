@@ -1,0 +1,76 @@
+.navBarContainer {
+  display: flex;
+  font-size: 2rem;
+}
+.navBarItemsList {
+  display: flex;
+  gap: 4rem;
+  list-style-type: none;
+}
+.navBarItemsList a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbarCoinImg {
+  width: 3.4vw;
+  margin: auto;
+  margin-top: 0.4rem;
+}
+
+.navBarInputField {
+  padding: 1rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  font-size: 5rem;
+}
+
+.navBarInputField input::placeholder {
+  font-size: 1.7rem;
+}
+
+.navBarSearch {
+  padding: 2rem;
+  width: 30%;
+  margin-top: 1rem;
+  flex-basis: 40%;
+}
+.navbarCoins {
+  padding: 1rem;
+  margin-top: 0.7rem;
+}
+
+.navBarHeader {
+  width: 23.4rem;
+  color: white;
+  background-color: #2e4b90;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.navBarHeader a {
+  text-decoration: none;
+  color: white;
+  align-self: center;
+  margin-right: auto;
+  padding: 2rem;
+}
+
+.navBarHr {
+  height: 30%;
+  align-self: center;
+}
+
+li {
+  align-self: center;
+}
+
+.navBarContainerRule {
+  width: 40%;
+  margin-left: 2rem;
+  opacity: 0.5;
+}

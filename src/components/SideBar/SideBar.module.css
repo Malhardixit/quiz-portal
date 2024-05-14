@@ -1,38 +1,60 @@
+:root {
+  --blue: #2e4b90;
+  --white: #ffffff;
+}
+
 .sideBarContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 20rem;
-    height: 100%;
-    background-color: #2E4B90;
-    border-top-left-radius: 3rem;
-    border-bottom-left-radius: 3rem;
+  position: sticky;
+  width: 29rem  ;
+  top: 0;
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .sideBarHeader {
-    font-size: 2rem;
-    padding:2rem;
-    color: white;
+  font-size: 2rem;
+  /* padding: 2rem; */
+  color: var(--white);
 }
 
 .sideBarContentsWrapper {
-    display: flex;
-    flex-direction: column;
-    padding:2rem;
-
+  padding: 2rem;
+  flex-grow: 1;
 }
 
 .sideBarContents {
-    margin-top: 2rem;
-    font-size: 1.4rem;
-    cursor: pointer;
-    color: white;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--white);
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding-left: 2rem;
 }
 
 .sideBarContentsActive {
-    background-color: white;
-    color: #2E4B90;
-    padding:1.6rem;
-    width:100%;
-    border-radius: 2rem 0 0 2rem;
+  background-color: var(--white);
+  color: var(--blue);
+  padding: 1.6rem;
+  width: 90%;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.sideBarContainerCloseWrapper {
+  display: flex;
+}
+
+.sidebarRouteName{
+  padding-top: 1rem;
+}
+.sidebarIconActive{
+  fill: black;
+  z-index: 999;
+}
+.sidebarIcon{
+  padding-top: 0.5rem;
 }
